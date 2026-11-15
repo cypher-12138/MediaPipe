@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+# Hand tracking dependencies
+# Install: pip install -r requirements.txt
+#
+# mediapipe is pinned to 0.10.14 on purpose:
+#   * 0.10.15+ removed the legacy "mp.solutions" API (moved to Tasks API)
+#   * the Tasks API needs a separate hand_landmarker.task model download
+#   * 0.10.14 ships the hand model inside the wheel, so no extra download
+#
+# mediapipe already ships opencv-contrib-python, so opencv-python is NOT listed
+# here: having both installed means two packages own the same "cv2" module.
+mediapipe==0.10.14
+numpy<2
+opencv-contrib-python>=4.8,<5
